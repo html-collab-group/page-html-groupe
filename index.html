@@ -6,14 +6,33 @@
 </head>
 <body>
   <h1>Bienvenue !</h1>
-
+  <p>Ajouté par eya</p>
   
+  <section>
+    <div class="todo">
+      <h2>Checklist du Projet</h2>
+      <input type="text" id="task-input" placeholder="Nouvelle tâche...">
+      <button onclick="addTask()">Ajouter</button>
+      <ul id="task-list"></ul>
+    </div>
+  </section>
+
   <div class="ma-contribution">
     <h2>Salut, c'est Lynda !</h2>
     <p>Je participe à ce projet collaboratif.</p>
-    
   </div>
-  
 
+  <script>
+    function addTask() {
+      const input = document.getElementById('task-input');
+      const list = document.getElementById('task-list');
+      if (input.value) {
+        const li = document.createElement('li');
+        li.textContent = input.value;
+        list.appendChild(li);
+        input.value = '';
+      }
+    }
+  </script>
 </body>
 </html>
